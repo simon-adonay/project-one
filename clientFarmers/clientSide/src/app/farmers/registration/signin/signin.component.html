@@ -1,0 +1,22 @@
+
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form class="my-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" [formGroup]="signInForm"
+    (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email" type="email" name="email" formControlName="email">
+      <mat-hint>Please enter a valid email</mat-hint>
+      <mat-error>Invalid or missing email</mat-error>
+    </mat-form-field><br />
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Password" type="password" name="password" formControlName="password">
+      <mat-hint>Please enter your password</mat-hint>
+      <mat-error>Invalid or missing password</mat-error>
+
+    </mat-form-field>
+    <button color="primary" mat-raised-button type="submit" class="btn btn-primary" [disabled]="!signInForm.valid"
+      *ngIf="!isLoading">Login</button>
+  </form>
+</mat-card>

@@ -1,0 +1,23 @@
+
+.bigContainer {
+  margin-top: 20px;
+}
+
+.productList {
+  max-width: 200px;
+  margin-left: 20px;
+  height: 300px;
+  margin-bottom: 80px;
+}
+.header-image {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  height: 150px;
+  width: 140;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 7px;
+}

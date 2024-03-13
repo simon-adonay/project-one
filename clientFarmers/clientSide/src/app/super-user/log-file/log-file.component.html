@@ -1,0 +1,13 @@
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+<mat-selection-list #logs>
+  <mat-progress-bar *ngIf='isLoading' mode="buffer"></mat-progress-bar>
+
+  <mat-list-option *ngFor="let log of logList">
+    {{log}}
+  </mat-list-option>
+</mat-selection-list>
+
+<p>
+  Options selected: {{logs.selectedOptions.selected.length}}
+</p>

@@ -1,0 +1,21 @@
+<!-- <button mat-button>Add Product</button> -->
+<div class="bigContainer">
+  <div class="container">
+    <mat-card class="productList" *ngFor="let product of products ">
+      <mat-card-header>
+        <mat-card-title>{{product.name}} </mat-card-title>
+        <mat-card-subtitle>Quantity: {{product.quantity}} </mat-card-subtitle>
+      </mat-card-header>
+      <img class="header-image" mat-card-image src="http://localhost:5000/files/{{product.imageUrl}}">
+      <mat-card-content>
+        <p>
+          {{product.description}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions *ngIf="userIsAuthenticated">
+        <button mat-raised-button color="primary" (click)='editProduct(product)'>EDIT</button>
+        <button mat-raised-button color="warn" (click)="onHandleDelete(farmerId, product._id)">DELETE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

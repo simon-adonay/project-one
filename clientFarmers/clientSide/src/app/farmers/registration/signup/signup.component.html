@@ -1,0 +1,55 @@
+<!-- <mat-toolbar>
+  <span>Registration</span>
+</mat-toolbar> -->
+<!-- <mat-card class="my-card">
+  <mat-card-content>
+    <form class="my-form"> -->
+<!--FORM FIELDS HERE-->
+<!-- </form>
+</mat-card-content>
+<mat-card-actions> -->
+<!--REGISTER BUTTON HERE-->
+<!-- </mat-card-actions>
+</mat-card> -->
+<!-- <mat-card-content> -->
+<mat-card>
+
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" class="my-form" [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Company</mat-label>
+      <input matInput type="text" placeholder="name" name="company" formControlName="company">
+      <mat-hint>Please enter a valid email</mat-hint>
+      <mat-error>Invalid or missing email</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="Email" name="email" formControlName="email">
+      <mat-hint>Please enter a valid email</mat-hint>
+      <mat-error>Invalid or missing email</mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="Should be at least 3 characters long!">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Insert your password" name="password" formControlName="password">
+      <mat-hint>Please enter your password</mat-hint>
+      <mat-error>Invalid or missing password</mat-error>
+
+    </mat-form-field>
+    <button color="primary" mat-raised-button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid"
+      *ngIf="!isLoading">Submit</button>
+
+  </form>
+  <br />
+  <div class="container">
+
+    <label label class="btn btn-default">
+      <input type="file" (change)="selectFile($event)" />
+    </label><br />
+    <button class="btn btn-success" (click)="imageUploading()">
+      Upload
+    </button>
+  </div>
+  <br />
+
+
+  <!-- </mat-card-content> -->

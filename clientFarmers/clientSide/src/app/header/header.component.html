@@ -1,0 +1,71 @@
+<!-- <mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span><a routerLink="/">Local Organic Market</a></span>
+    <span class="spacer"></span>
+    <ul>
+
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button [routerLink]="" routerLinkActive="mat-accent">HOME</a>
+      </li>
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button [routerLink]="" routerLinkActive="mat-accent">ONLINE ORDERING</a>
+      </li>
+    </ul>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span>Second Line</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <span>Third Line</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar> -->
+
+<!--  -->
+
+
+
+
+<mat-toolbar color="primary">
+  <span>
+    <!-- <a routerLink="/">Local Organic Market</a> -->
+  </span>
+  <span class="spacer"></span>
+
+
+  <button *ngIf="userIsSuperUser" mat-button [matMenuTriggerFor]="menu">Manage Account</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)='getFarmersList()'>FarmersList</button>
+    <button mat-menu-item (click)='getCustomerList()'>CustomersList</button>
+  </mat-menu>
+
+  <ul>
+    <li *ngIf="userIsSuperUser">
+      <a mat-button (click)='getOrdersForSuper()' routerLinkActive="mat-accent">Orders</a>
+    </li>
+    <li *ngIf="userIsSuperUser">
+      <a mat-button (click)='getLogFile()' routerLinkActive="mat-accent">Log file</a>
+    </li>
+    <li *ngIf="!userIsSuperUser">
+      <button mat-button (click)='getNewProduct()' routerLinkActive="mat-accent">NewProduct</button>
+    </li>
+    <li *ngIf="!userIsSuperUser">
+      <button mat-button (click)='getListProduct()' routerLinkActive="mat-accent">Products</button>
+    </li>
+    <li *ngIf="!userIsSuperUser">
+      <a mat-button (click)='getOrders()' routerLinkActive="mat-accent">Orders</a>
+    </li>
+
+    <li *ngIf="!userIsSuperUser">
+      <a mat-button (click)='updateProduct()' routerLinkActive="mat-accent">update Products</a>
+    </li>
+
+  </ul>
+</mat-toolbar>
+<router-outlet></router-outlet>

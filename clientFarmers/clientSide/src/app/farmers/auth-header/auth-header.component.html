@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>
+    <!-- <a routerLink="/">Local Organic Market</a> -->
+  </span>
+  <span class="spacer"></span>
+
+  <ul>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/signin" routerLinkActive="mat-accent">Login</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button (click)="onLogout()" mat-button>Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>
